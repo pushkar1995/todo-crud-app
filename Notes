@@ -1,2 +1,28 @@
 React,Typescript,TailwindCSS ToDo-Crud App
 
+Reference Link: https://www.youtube.com/watch?v=bjnW2NLAofI
+PedroTech YC
+
+https://www.youtube.com/watch?v=omphzcP6wf4
+PedroTech YC : ToDo Completed Part Reference
+
+While IN Single Component:
+
+      // const addTask = () => {
+  //   const newTask = { taskName: task } //creating newTask Object
+  //   setTodoList([...todoList, newTask])
+  //   setTask('')
+  //   console.log(todoList)
+  // }
+
+
+     {/* {todoList.map((task: ITask, key: number) => {
+            return (
+              <TodoTask 
+                key={key} 
+                task={task} 
+                handleTaskDelete={handleTaskDelete}
+                // completedTaskHandler={completedTaskHandler}
+              />
+            )
+          })} */}
