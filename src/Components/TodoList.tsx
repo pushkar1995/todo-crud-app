@@ -4,11 +4,11 @@ import { ITask } from './Interfaces'
 interface Props {
   list: ITask[],
   onDeleteClickHnd(data: ITask): void,
-  completedTodo(data: ITask): void, 
+  // completedTodo(data: ITask): void, 
 }
 
 const TodoList = (props: Props) => {
-  const { list, onDeleteClickHnd, completedTodo } = props
+  const { list, onDeleteClickHnd } = props
  
   return (
     <div className='p-1'>
@@ -18,26 +18,25 @@ const TodoList = (props: Props) => {
             console.log(task)
 
             return (
-              <div>
-                <div className='flex'>
-                {/* <div style={{ backgroundColor: completed ? 'green' : 'white'}}> */}
+              <div key={task.id}>
+                <div className={`flex ${task.completed ? 'line-through opacity-30' : ''}`}>
                   <button
                     type='button'
                     className='pr-2 text-pinkyred'
                     onClick={() => onDeleteClickHnd(task)}
                   >X</button>
                       <input
+                        title='Completed/Not Completed'
                         type='checkbox' 
                         className='mr-1'
                         // className={`list ${task.completed ? 'complete' : ''}`}
-                        onClick={() => completedTodo(task)}
+                        // onClick={(e) => markDone(task.id)}
                       />
-                <tr key={task.id}>
+                <tr>
                 <td>
                   {task.taskTitle}
                 </td>
                 </tr>
-                {/* </div> */}
                 </div>
                 <hr className="w-40 border-grey-300" />
               </div>

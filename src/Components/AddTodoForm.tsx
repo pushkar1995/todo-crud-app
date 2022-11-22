@@ -26,7 +26,7 @@ const AddTodoForm = (props: Props) => {
     const data: ITask = {
         id: new Date().toJSON.toString(),
         taskTitle: todoTitle,
-        // completed: false 
+        completed: false 
     }
     onAddTodoClickHnd(data)
     setTodoTitle('')

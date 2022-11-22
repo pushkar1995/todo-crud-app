@@ -11,30 +11,45 @@ const App: FC = () => {
      setTodoList([...todoList, data])
   }
 
-  const completedTodoHandler = (data: ITask) => {
-    setTodoList(
-      todoList.map((item) => {
-        if (item.id === data.id) {
-          // return { ...item, completed: !item.completed}
-          return { ...item, completed: true}
-        } else {
-          return item
-        }
-      })
-    )
-  }
+  //  Mark task as done or completed
+  // const completedTodoHandler = (data: ITask) => {
+  //   setTodoList(
+  //     todoList.map((item) => {
+  //       if (item.id === data.id) {
+  //         // return { ...item, completed: !item.completed}
+  //         return { ...item, completed: true}
+  //       } else {
+  //         return item
+  //       }
+  //     })
+  //   )
+  // } 
+
+  // const markDone = (data: ITask) => {
+  //   let newTodo = todoList.map( todo => {
+  //     if( todo.id === id ) {
+  //       return ({ ...todo, completed: !todo.completed})
+  //     }
+  //     return todo
+  //   })
+  //   setTodoList(newTodo)
+  // }
 
   //TODO Delete
   const deleteTodo = (data: ITask) => {
     const indexToDelete = todoList.indexOf(data)
+    // console.log(1,indexToDelete)
+    // console.log(2,data)
+    // console.log(3,todoList)
+    // return
     const tempList = [...todoList]
     tempList.splice(indexToDelete, 1)
     setTodoList(tempList)
   }
 
-  //To Clear to do List at Once
+  //To Clear to do List All Items at Once
   const clearAllTodoListItems = () => {
-    setTodoList
+    setTodoList([])
   }
 
   return (
@@ -50,15 +65,16 @@ const App: FC = () => {
             <TodoList
                 list={todoList} 
                 onDeleteClickHnd={deleteTodo}
-                completedTodo={completedTodoHandler}
-                // completed={completed}
+                // completedTodo={markDone}
             />
-          <footer className='p-1 mr-3 flex justify-end'>
-            <button
-              className='text-pinkyred'
-              onClick={clearAllTodoListItems}
-            >Clear</button>
-          </footer>
+            {todoList.length>=1 && 
+                 <footer className='p-1 mr-3 flex justify-end'>
+                 <button
+                   className='text-pinkyred'
+                   onClick={clearAllTodoListItems}
+                 >Clear</button>
+               </footer>
+            }
         </div>
       </div>
     </div>
