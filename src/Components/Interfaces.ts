@@ -1,13 +1,19 @@
 export interface ITask {
-    id: string;
+    id: Number;
     taskTitle: string;
-    completed: false
+    isCompleted: boolean
 }
 
 export const dummyTaskList: ITask[] = [
     {
-        id: new Date().toJSON().toString(),
+        id: new Date().getMilliseconds(),
         taskTitle: 'Dummy Task',
-        completed: false
+        isCompleted: false
     }
 ]
+
+export enum PageEnum {
+    list,
+    add,
+    edit
+}

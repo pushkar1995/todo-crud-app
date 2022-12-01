@@ -5,7 +5,6 @@ type Props = {
     onAddTodoClickHnd: (data: ITask) => void
 }
 
-
 const AddTodoForm = (props: Props) => {
     const { onAddTodoClickHnd } = props
     const [ todoTitle, setTodoTitle ] = useState<string>('')
@@ -24,9 +23,9 @@ const AddTodoForm = (props: Props) => {
   const onAddTodoBtnClickHnd = (e: any): void => {
     e.preventDefault()
     const data: ITask = {
-        id: new Date().toJSON.toString(),
+        id: new Date().getMilliseconds(),
         taskTitle: todoTitle,
-        completed: false 
+        isCompleted: false 
     }
     onAddTodoClickHnd(data)
     setTodoTitle('')

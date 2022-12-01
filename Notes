@@ -1,7 +1,8 @@
 React,Typescript,TailwindCSS ToDo-Crud App
 
 Reference Link: https://www.youtube.com/watch?v=bjnW2NLAofI
-PedroTech YC
+PedroTech YC : Delete Functionality/Filter
+IMP Video for Concepts
 
 https://www.youtube.com/watch?v=omphzcP6wf4
 PedroTech YC : ToDo Completed Part Reference
@@ -29,3 +30,9 @@ While IN Single Component:
               />
             )
           })} */}
+
+
+Checkout Reference Links:
+
+https://www.youtube.com/watch?v=TmDNBEdHzVs
+WebstylePress YC for markDone concept of ToDo
