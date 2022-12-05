@@ -39,6 +39,7 @@ const AddTodoForm = (props: Props) => {
             className='flex bg-white m-1 w-70 h-18 max-w-sm overflow-hidden shadow-lg'
             >
           <input
+            title='Task Name'
             type='text'
             placeholder='new task'
             className='p-2'

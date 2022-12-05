@@ -2,24 +2,24 @@ import React, { useState, ChangeEvent } from 'react'
 import { ITask  } from './Interfaces'
 
 type Props = {
-    data: ITask,
+    currentData: ITask,
     onUpdateClickHnd: (data: ITask) => void,
     toClearEditFieldHnd: () => void
 }
 
-const EditTodo = (props: Props) => {
-    const { data, onUpdateClickHnd, toClearEditFieldHnd } = props
-    const [ todoTitle, setTodoTitle ] = useState(data.taskTitle)
+const EditTodoForm = (props: Props) => {
+    const { currentData, onUpdateClickHnd, toClearEditFieldHnd } = props
+    const [ updatedTodoTitle, setUpdatedTodoTitle ] = useState(currentData.taskTitle)
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-        setTodoTitle(e.target.value)
+      setUpdatedTodoTitle(e.target.value)
       }
     
     const onEditTodoBtnClickHnd = (e: any) => {
         e.preventDefault()
         const updatedData: ITask = {
-            id: data.id,
-            taskTitle: todoTitle,
+            id: currentData.id,
+            taskTitle: updatedTodoTitle,
             isCompleted: false
         }
         onUpdateClickHnd(updatedData)
@@ -34,9 +34,9 @@ const EditTodo = (props: Props) => {
         >
       <input
         type='text'
-        placeholder='new task'
+        placeholder='update todo'
         className='p-2'
-        value={todoTitle}
+        value={updatedTodoTitle}
         onChange={handleChange}
         // ref={inputRef}
       />
@@ -49,4 +49,4 @@ const EditTodo = (props: Props) => {
   )
 }
 
-export default EditTodo
+export default EditTodoForm
