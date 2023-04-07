@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react'
-import { ITask  } from './Interfaces'
+import { ITask  } from '../Interfaces'
 
 type Props = {
     currentData: ITask,

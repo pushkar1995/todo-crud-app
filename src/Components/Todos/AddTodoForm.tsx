@@ -1,5 +1,5 @@
 import React,{ useState, ChangeEvent, useEffect, useRef }  from 'react'
-import { ITask } from './Interfaces'
+import { ITask } from '../Interfaces'
 
 type Props = {
     onAddTodoClickHnd: (data: ITask) => void

@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import { AiTwotoneEdit } from "react-icons/ai"
-import { ITask } from './Interfaces'
+import { ITask } from '../Interfaces'
 
 interface TodoListProps {
   todoArray: ITask[],

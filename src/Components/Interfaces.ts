@@ -15,5 +15,7 @@ export const dummyTaskList: ITask[] = [
 export enum PageEnum {
     list,
     add,
-    edit
+    edit,
+    todopage,
+    registerpage
 }
