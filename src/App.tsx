@@ -1,6 +1,6 @@
 import React,{ FC, useState } from 'react';
 import { dummyTaskList, ITask, PageEnum } from '../src/Components/Interfaces'
-import AddTodoForm from './Components/AddToDoForm';
+import AddTodoForm from './Components/AddTodoForm';
 import EditTodoForm from './Components/EditTodoForm';
 import TodoList from './Components/TodoList';
 
